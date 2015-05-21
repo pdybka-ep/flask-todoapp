@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="" method=post class="form-horizontal">
+
+    {% if category is defined %}
+        <h2>Edit category</h2>
+    {% else %}
+        <h2>Create new category</h2>
+    {% endif %}
+
+    <div class="control-group">
+
+            <div class="control-group">
+
+                <div class="controls">
+                    {% if category is defined %}
+                        <input type="text" id="category" name="category" maxlength="20" class="input-xlarge"#}
+                               placeholder="Please give category" value="{{ category.name }}"
+                               required>
+                    {% else %}
+                        <input type="text" id="category" name="category" maxlength="20" class="input-xlarge"#}
+                               placeholder="Please give category"
+                               required>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+<hr>
+     <div class="control-group">
+            <div class="controls">
+             <button type="submit" class="btn btn-success">
+                {% if category %}
+                    Save
+                {% else %}
+                    Create category
+                {% endif %}
+             </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

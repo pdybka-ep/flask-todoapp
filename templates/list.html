@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <h3 class="lead">Category</h3>
+            <div id="rounded">
+            <table id="category-table" class="table" style="table-layout: fixed">
+               {%- for category in categories %}
+                    <tr>
+                        <td style="width:50%"><a href="{{ url_for('list_todos', name=category.name) }}">
+                            {{ category.name }}</a></td>
+                        <td>
+                            <a  class="btn btn-mini btn-default" href="{{ url_for('edit_category', category_id=category.id) }}">Edit</a>
+
+                            <form action="{{ url_for('delete_category', category_id=category.id) }}" method="post">
+                                <input class="btn btn-mini btn-danger" type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+
+                {%- endfor %}
+            </table>
+        </div>
+        </div>
+
+
+        <div class="col-md-9">
+            <h3 class="lead"></h3>
+            <table id="todo-table" class="table">
+               <tr>
+                    <th>#</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Creation date</th>
+                    <th></th>
+                </tr>
+                {%- for todo in todos %}
+                    <tr class={{ "success" if todo.is_done }}>
+                        <td> {{ loop.index }} </td>
+                        <td style={{ "text-decoration:line-through" if todo.is_done }}>{{ todo.description }}</td>
+                        <td>{{ todo.category.name }}</td>
+                        <td>{{ todo.priority.name }}</td>
+                        <td>{{ todo.creation_date }}</td>
+                        <td>
+                            {% if todo.is_done %}
+                                <a class="btn btn-mini btn-default disabled"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >Edit</a>
+                                <form action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
+                                    <input class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
+                                </form>
+                                <form action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
+                                    <input class="btn btn-mini btn-default" type="submit" name="mark_done" value="Done" disabled>
+                                </form>
+                            {% else %}
+                                 <a class="btn btn-mini btn-info"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >Edit</a>
+                                <form action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
+                                    <input class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
+                                </form>
+                                <form action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
+                                    <input class="btn btn-mini btn-success" type="submit" name="mark_done" value="Done">
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {%- endfor %}
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

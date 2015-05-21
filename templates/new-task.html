@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="" method=post>
+    {% if todo is defined %}
+        <h2>Edit TODO</h2>
+    {% else %}
+        <h2>Create new TODO</h2>
+    {% endif %}
+
+        <div class="control-group">
+
+
+            <div class="control-group" >
+                <div class="controls">
+                    <select class="selectpicker" name="category" required>
+                        {% for category in categories %}
+                            {% if todo is defined %}
+                            <option value="{{ category.id }}" {% if todo.category_id == category.id %} selected {% endif %}>{{ category.name }}</option>
+                            {% else %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    <select class="selectpicker" name="priority" required>
+                        {% for priority in priorities %}
+                            {% if todo is defined %}
+                                <option value="{{ priority.id }}" {% if todo.priority_id == priority.id %} selected {% endif %}>{{ priority.name }}</option>
+                            {% else %}
+                                <option value="{{ priority.id }}">{{ priority.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    {% if todo is defined %}
+                    <input type="text" id="description" name="description" maxlength="60" class="input-xlarge"
+                           placeholder="Describe TODO" value="{{ todo.description }}"
+                           required>
+                    {% else %}
+                     <input type="text" id="description" name="description" maxlength="60" class="input-xlarge"
+                           placeholder="Describe TODO"
+                           required>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">
+                    {% if todo %}
+                        Save
+                    {% else %}
+                        Create Todo
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

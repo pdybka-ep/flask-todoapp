@@ -4,8 +4,13 @@ TODOapp developed using Flask, Vertabelo, SQLAlchemy and Bootstrap
 
 # Installation
 
-The tutorial explains how to setup a local environment with all required dependencies.
+clone the repo:
+git clone https://github.com/pdybka-ep/flask-todoapp.git
 
-To run the application in the development web server type:
+The tutorial:
+ http://www.vertabelo.com/blog/technical-articles/web-app-development-with-flask-sqlalchemy-bootstrap-part-1
+explains how to set up a local environment with all required dependencies.
+
+To run the application type:
 
 python todoapp.py

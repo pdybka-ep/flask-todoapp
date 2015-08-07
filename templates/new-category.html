@@ -13,15 +13,9 @@
             <div class="control-group">
 
                 <div class="controls">
-                    {% if category is defined %}
-                        <input type="text" id="category" name="category" maxlength="20" class="input-xlarge"#}
-                               placeholder="Please give category" value="{{ category.name }}"
-                               required>
-                    {% else %}
-                        <input type="text" id="category" name="category" maxlength="20" class="input-xlarge"#}
-                               placeholder="Please give category"
-                               required>
-                    {% endif %}
+                        <input type="text" id="category" name="category" maxlength="20" class="input-xlarge form-control"#}
+                               placeholder="Please give category"{% if category is defined %} value="{{ category.name }}"{% endif %}
+                               autofocus=1 required>
                 </div>
             </div>
         </div>

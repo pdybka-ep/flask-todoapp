@@ -1,0 +1,5 @@
+- engine: engine.py:ExecutionEngine
+  name: Stub
+  scenario:
+    - Load website
+    - Pause

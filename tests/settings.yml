@@ -1,0 +1,47 @@
+postgres_version: 9.3.9
+startup_timeout: 45
+python_version: 2.7.10
+environment:
+  - approved_platforms:
+    - linux
+    - darwin
+  - freeports:
+    - 10025
+    - 18080
+    - 15432
+    - 16379
+  - brew:
+    - libtool
+    - automake
+  - debs:
+    - firefox
+    - automake
+    - libtool
+    - libreadline6
+    - libreadline6-dev
+    - zlib1g-dev
+    - libxml2
+    - libxml2-dev
+    - python3
+    - python-setuptools
+    - python3-dev
+    - python-virtualenv
+    - python-pip 
+    - firefox
+    - automake
+    - libtool
+    - libreadline6
+    - libreadline6-dev
+    - zlib1g-dev
+    - libxml2
+    - libxml2-dev
+    - make
+    - build-essential
+    - libssl-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - wget
+    - curl
+    - llvm
+    - libpq-dev

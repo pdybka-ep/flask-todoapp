@@ -48,18 +48,18 @@
                             {% if todo.is_done %}
                                 <a class="btn btn-mini btn-default disabled"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >Edit</a>
                                 <form action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
-                                    <input class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
+                                    <input id="delete_{{ todo.id}}" class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
                                 </form>
                                 <form action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
-                                    <input class="btn btn-mini btn-default" type="submit" name="mark_done" value="Done" disabled>
+                                    <input id="mark_done_{{ todo.id}}" class="btn btn-mini btn-default" type="submit" name="mark_done" value="Done" disabled>
                                 </form>
                             {% else %}
                                  <a class="btn btn-mini btn-info"  href="{{ url_for('update_todo', todo_id=todo.id) }}" >Edit</a>
                                 <form action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
-                                    <input class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
+                                    <input id="delete_{{ todo.id}}" class="btn btn-mini btn-danger" type="submit" name="delete_todo" value="Delete">
                                 </form>
                                 <form action="{{ url_for('mark_done', todo_id=todo.id) }}" method="post">
-                                    <input class="btn btn-mini btn-success" type="submit" name="mark_done" value="Done">
+                                    <input id="mark_done_{{ todo.id}}" class="btn btn-mini btn-success" type="submit" name="mark_done" value="Done">
                                 </form>
                             {% endif %}
                         </td>

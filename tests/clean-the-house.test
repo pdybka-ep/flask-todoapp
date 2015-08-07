@@ -1,0 +1,9 @@
+- engine: engine.py:ExecutionEngine
+  name: Clean the house
+  scenario:
+    - Load website
+    - Click: new-task
+    - Fill form:
+        description: Clean the house
+    - Click: submit
+    - Click: mark_done_1

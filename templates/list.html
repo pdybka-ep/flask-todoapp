@@ -8,12 +8,15 @@
             <table id="category-table" class="table" style="table-layout: fixed">
                {%- for category in categories %}
                     <tr>
-                        <td style="width:50%"><a href="{{ url_for('list_todos', name=category.name) }}">{{ category.name }}</a></td>
                         <td>
-                            <a  class="btn btn-mini btn-default" href="{{ url_for('edit_category', category_id=category.id) }}">Edit</a>
-
-                            <form action="{{ url_for('delete_category', category_id=category.id) }}" method="post">
-                                <input class="btn btn-mini btn-danger" type="submit" value="Delete">
+                            <a href="{{ url_for('list_todos', name=category.name) }}">{{ category.name }}</a>
+                        </td>
+                        <td>
+                            <a  class="btn btn-sm btn-default" href="{{ url_for('edit_category', category_id=category.id) }}">{{ icon('edit') }} Edit</a>
+                        </td>
+                        <td>
+                            <form id="catdel-{{ category.name }}" action="{{ url_for('delete_category', category_id=category.id) }}" method="post">
+                                <a class="btn btn-sm btn-danger" onclick="$('#catdel-{{ category.name }}').submit();">{{ icon('trash') }} Delete</a>
                             </form>
                         </td>
                     </tr>

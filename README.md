@@ -1,18 +1,18 @@
-# flask TODOapp
+# Flask TODOapp
 
 The example TODOapp developed using **Flask**, **Vertabelo**, **SQLAlchemy** and **Bootstrap**.
 
 # Screenshots
 
-1. Main screen
+##### Main screen
 
 <img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-main.png"/>
 
-2. Create todo screen
+##### Create todo screen
 
 <img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-new-todo.png"/>
 
-3. Create category screen
+##### Create category screen
 
 <img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-new-category.png"/>
 
@@ -31,4 +31,4 @@ The tutorial **Flask web application development** includes 4 parts:<br>
 - http://www.vertabelo.com/blog/technical-articles/web-app-development-with-flask-sqlalchemy-bootstrap-part-2 <br>
 - http://www.vertabelo.com/blog/technical-articles/web-app-development-with-flask-sqlalchemy-bootstrap-part-3 <br>
 
-and explains the application details from how to *'set up a local environment with all required dependencies'* to *'deploymnet to Heroku'* .
+and explains the application details from how to *'set up a local environment with all required dependencies'* to *'deployment to Heroku'* .

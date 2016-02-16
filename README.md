@@ -6,15 +6,15 @@ The example TODOapp developed using **Flask**, **Vertabelo**, **SQLAlchemy** and
 
 ##### Main screen
 
-<img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-main.png"/>
+<img src="http://www.vertabelo.com/_file/github/flask-todoapp/todoapp-main.png"/>
 
 ##### Create todo screen
 
-<img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-new-todo.png"/>
+<img src="http://www.vertabelo.com/_file/github/flask-todoapp/todoapp-new-todo.png"/>
 
 ##### Create category screen
 
-<img src="http://www.vertabelo.com/_file/blog/github-flask-todoapp/todoapp-new-category.png"/>
+<img src="http://www.vertabelo.com/_file/github/flask-todoapp/todoapp-new-category.png"/>
 
 # Installation
 

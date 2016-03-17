@@ -1,6 +1,7 @@
 # Flask TODOapp
 
-The example TODOapp developed using **Flask**, **Vertabelo**, **SQLAlchemy** and **Bootstrap**.
+The example TODOapp developed using **Flask**, **Vertabelo**, **SQLAlchemy** and **Bootstrap**. <br>
+The initial version is deployed to **Heroku**: http://flask-todoapp.herokuapp.com/.
 
 # Screenshots
 
